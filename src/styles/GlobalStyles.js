@@ -13,6 +13,8 @@ export const GlobalStyles = createGlobalStyle`
         --light-silver: #D3DEDC;
         --shadow-light: 0 4px 8px 0 #ffffff4d ;
         --shadow-dark: 0 4px 8px 0 #00000040;
+        --fa-edit: #434774;
+        --fa-delete: #ff5757;
     }
 
     * { 
