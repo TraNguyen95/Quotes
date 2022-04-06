@@ -3,7 +3,6 @@ import Swal from "sweetalert2";
 import { API } from "../utils/config";
 import { SweetAlertSuccessful } from "../models/SweetAlertModels";
 import { SweetAlertFailure } from "../models/SweetAlertModels";
-import { history } from "../App";
 
 const alertSuccess = new SweetAlertSuccessful();
 const alertFailure = new SweetAlertFailure();
@@ -16,7 +15,7 @@ export const getQuotesAction = () => {
       });
 
       let result = await axios.get(API);
-      
+
       dispatch({
         type: "GET_QUOTES",
         quotesList: result.data.quotes.reverse(),
@@ -65,7 +64,6 @@ export const updateQuotesAction = (formData, id) => async (dispatch) => {
       },
     });
 
-    history.push("/dashboard");
     window.location.reload();
   } catch (error) {
     Swal.fire({
@@ -78,7 +76,7 @@ export const updateQuotesAction = (formData, id) => async (dispatch) => {
 export const deleteQuotesAction = (id) => async (dispatch) => {
   try {
     await axios.delete(`${API}/${id}`);
-    
+
     Swal.fire({
       ...alertSuccess,
       didDestroy: () => {
