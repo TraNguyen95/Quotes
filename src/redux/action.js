@@ -3,11 +3,19 @@ import Swal from "sweetalert2";
 import { API } from "../utils/config";
 import { SweetAlertSuccessful } from "../models/SweetAlertModels";
 import { SweetAlertFailure } from "../models/SweetAlertModels";
+import { notification } from "antd";
 
 const alertSuccess = new SweetAlertSuccessful();
 const alertFailure = new SweetAlertFailure();
 
-export const getQuotesAction = () => {
+export const openNotification = (placement) =>
+  notification.success({
+    message: "New quote is randomly generated after 15s",
+    duration: 0.75,
+    placement,
+  });
+
+export const getQuotesAction = (home) => {
   return async (dispatch) => {
     try {
       await dispatch({
@@ -24,6 +32,27 @@ export const getQuotesAction = () => {
       await dispatch({
         type: "LOADING_FALSE",
       });
+
+      if (home) {
+        openNotification("topRight");
+      }
+    } catch (error) {
+      Swal.fire({
+        ...alertFailure,
+      });
+      console.log(error);
+    }
+  };
+};
+
+export const setQuoteAction = () => {
+  return async (dispatch) => {
+    try {
+      await dispatch({
+        type: "SET_QUOTE",
+      });
+
+      openNotification("topRight");
     } catch (error) {
       Swal.fire({
         ...alertFailure,
