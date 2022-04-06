@@ -5,7 +5,7 @@ const size = {
   xl: "1440px",
 };
 
-export const breakpoints = {
+export const Breakpoints = {
   sm: `@media only screen and (max-width: ${size.sm})`,
   md: `@media only screen and (max-width: ${size.md})`,
   lg: `@media only screen and (max-width: ${size.lg})`,

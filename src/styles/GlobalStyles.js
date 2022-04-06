@@ -7,6 +7,7 @@ export const GlobalStyles = createGlobalStyle`
         --primary: #423F57;
         --red: #CA4242;
         --light-red: #dea3a3;
+        --lumber: #FFDFD3;
         --light: #fcfcfc;
         --dark: #18191A;
         --shadow-light: 0 4px 8px 0 #ffffff4d ;
