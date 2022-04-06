@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Breakpoints } from "../styles/Breakpoints";
 
-export const Heading = styled.h1`
+export const Heading = styled.h3`
   font-size: 4em;
   font-weight: 600;
   line-height: 1.3;
