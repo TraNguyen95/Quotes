@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FaPager } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Breakpoints } from "../../styles/Breakpoints";
+import { Breakpoints } from "../styles/Breakpoints";
 
 export default function NavbarHome() {
   const [windowDimension, setWindowDimension] = useState(null);
@@ -25,15 +26,19 @@ export default function NavbarHome() {
     <>
       {isMobile ? (
         <MobileNavbar>
-          <Navbar.Logo>NEMO QUOTES</Navbar.Logo>
-          <Navbar.Link>
+          <Navbar.Link to="/">
+            <Navbar.Logo>NEMO QUOTES</Navbar.Logo>
+          </Navbar.Link>
+          <Navbar.Link to="/admin">
             <FaPager />
           </Navbar.Link>
         </MobileNavbar>
       ) : (
         <Navbar.Wrapper>
-          <Navbar.Logo>NEMO QUOTES</Navbar.Logo>
-          <Navbar.Link>Dashboard</Navbar.Link>
+          <Navbar.Link to="/">
+            <Navbar.Logo>NEMO QUOTES</Navbar.Logo>
+          </Navbar.Link>
+          <Navbar.Link to="/admin">Dashboard</Navbar.Link>
         </Navbar.Wrapper>
       )}
     </>
@@ -47,7 +52,7 @@ const Navbar = {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
     ${Breakpoints.lg} {
       padding: 0.5rem 2rem 0;
     }
@@ -65,7 +70,7 @@ const Navbar = {
     }
   `,
 
-  Link: styled.a`
+  Link: styled(Link)`
     font-size: 1.8rem;
     cursor: pointer;
     font-weight: 600;

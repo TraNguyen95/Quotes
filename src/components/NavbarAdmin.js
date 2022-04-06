@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FaHome, FaPager, FaPlusSquare } from "react-icons/fa";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { Breakpoints } from "../../styles/Breakpoints";
+import { Breakpoints } from "../styles/Breakpoints";
 
 export default function NavbarAdmin() {
   const [windowDimension, setWindowDimension] = useState(null);
@@ -26,24 +27,26 @@ export default function NavbarAdmin() {
       {isMobile ? (
         <MobileNavbar.Wrapper>
           <MobileNavbar.List>
-            <MobileNavbar.Link>
+            <MobileNavbar.Link to="/">
               <FaHome />
             </MobileNavbar.Link>
-            <MobileNavbar.Link>
+            <MobileNavbar.Link to="/admin">
               <FaPager />
             </MobileNavbar.Link>
-            <MobileNavbar.Link>
+            <MobileNavbar.Link to="/admin/add">
               <FaPlusSquare />
             </MobileNavbar.Link>
           </MobileNavbar.List>
         </MobileNavbar.Wrapper>
       ) : (
         <Navbar.Wrapper>
-          <Navbar.Logo>NEMO QUOTES</Navbar.Logo>
+          <Link to="/">
+            <Navbar.Logo>NEMO QUOTES</Navbar.Logo>
+          </Link>
           <Navbar.List>
-            <Navbar.Link>Home</Navbar.Link>
-            <Navbar.Link>Dashboard</Navbar.Link>
-            <Navbar.Link>Add Quotes</Navbar.Link>
+            <Navbar.Link to="/">Home</Navbar.Link>
+            <Navbar.Link to="/admin">Dashboard</Navbar.Link>
+            <Navbar.Link to="/admin/add">Add Quotes</Navbar.Link>
           </Navbar.List>
         </Navbar.Wrapper>
       )}
@@ -77,7 +80,7 @@ const Navbar = {
   List: styled.div`
     display: flex;
   `,
-  Link: styled.a`
+  Link: styled(NavLink)`
     font-size: 1.8rem;
     cursor: pointer;
     font-weight: 600;
@@ -132,7 +135,7 @@ const MobileNavbar = {
     margin: 0;
     justify-content: space-around;
   `,
-  Link: styled.a`
+  Link: styled(Link)`
     display: flex;
     flex-direction: column;
     align-items: center;
