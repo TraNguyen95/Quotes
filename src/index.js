@@ -5,12 +5,13 @@ import App from "./App";
 import "antd/dist/antd.min.css";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import reportWebVitals from "./reportWebVitals";
-
+import { Provider } from "react-redux";
+import {store} from "./redux/reducer";
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <GlobalStyles />
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );
 
