@@ -123,8 +123,8 @@ const MobileNavbar = {
     position: fixed;
     width: 100vw;
     bottom: 0;
-    /* background-color: black; */
-    box-shadow: var(--shadow-light);
+    z-index: 999;
+    background: var(--light);
   `,
   List: styled.div`
     display: flex;
@@ -139,7 +139,7 @@ const MobileNavbar = {
     font-size: 2rem;
 
     & svg {
-      color: var(--light-silver);
+      color: var(--light-red);
     }
   `,
 };
