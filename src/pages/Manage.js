@@ -9,6 +9,7 @@ import Loading from "../components/Loading";
 import { Heading } from "../components/Heading";
 import { AntDesignTable } from "../styles/AntDesign";
 import { Breakpoints } from "../styles/Breakpoints";
+import { Link } from "react-router-dom";
 
 export default function Manage() {
   document.title = `Manage Quotes - ${NEMO}`;
@@ -21,16 +22,17 @@ export default function Manage() {
   const ADMIN = localStorage.getItem("ADMIN");
 
   useEffect(() => {
+    window.scroll(0,0)
     dispatch(getQuotesAction());
   }, [dispatch]);
 
   const deleteQuote = async (id) => {
-    if (ADMIN !== process.env.REACT_APP_NEMO) {
+    if (ADMIN !== process.env.REACT_APP_ADMIN) {
       return Swal.fire({
         position: "center",
         icon: "warning",
         title: "Warning",
-        text: "You Do Not Have Permission To Delete",
+        text: "You do not have permission to delete this quote",
       });
     }
 
@@ -80,7 +82,7 @@ export default function Manage() {
       render: (quote) => {
         return (
           <>
-            <S.Link key={1} to={`admin/edit/${quote._id}`}>
+            <S.Link key={1} to={`/admin/edit/${quote._id}`}>
               <S.Edit />
             </S.Link>
             <S.Delete key={2} onClick={() => deleteQuote(quote._id)} />
@@ -131,7 +133,7 @@ const S = {
     }
   `,
 
-  Link: styled.a``,
+  Link: styled(Link)``,
 
   Edit: styled(FaEdit)`
     cursor: pointer;
