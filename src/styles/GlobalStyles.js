@@ -10,8 +10,9 @@ export const GlobalStyles = createGlobalStyle`
         --lumber: #FFDFD3;
         --light: #fcfcfc;
         --dark: #18191A;
+        --light-silver: #D3DEDC;
         --shadow-light: 0 4px 8px 0 #ffffff4d ;
-        --shadow-dark: 0 4px 8px 0 #00000040;;
+        --shadow-dark: 0 4px 8px 0 #00000040;
     }
 
     * { 
@@ -24,11 +25,12 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Noto Sans', sans-serif;
         color: white;
         background-image: var(--bg-primary);
+        font-size: 16px;
+        height: inherit;
     }
 
-    p {
-        margin-top: 0;
-        margin-bottom: 1rem;
+    h1, h3, p {
+        margin-bottom: 0;
     }
 
     @keyframes fade-in {
@@ -38,6 +40,31 @@ export const GlobalStyles = createGlobalStyle`
             100% {
             opacity: 1;
          }
+    }
+
+    @keyframes spin {
+        from {
+             transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+            }
+    }
+
+    @keyframes dash {
+        0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        }
+      
+        50% {
+        stroke-dasharray: 90, 200;
+        stroke-dashoffset: -35px;
+        }
+      
+        100% {
+        stroke-dashoffset: -125px;
+        }
     }
 
     .fade-in {
