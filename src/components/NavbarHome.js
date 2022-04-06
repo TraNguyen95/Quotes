@@ -48,10 +48,11 @@ export default function NavbarHome() {
 const Navbar = {
   Wrapper: styled.nav`
     padding: 0.5rem 3rem 0;
-    margin-bottom: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 1440px;
+    margin: 0 auto;
 
     ${Breakpoints.lg} {
       padding: 0.5rem 2rem 0;
@@ -97,9 +98,6 @@ const Navbar = {
 };
 
 const MobileNavbar = styled.nav`
-  position: fixed;
-  width: 100vw;
-  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;

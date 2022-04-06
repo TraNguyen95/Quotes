@@ -3,6 +3,9 @@ import { Form, Table } from "antd";
 import { Breakpoints } from "./Breakpoints";
 
 export const AntDesignTable = styled(Table)`
+    max-width: 1440px;
+    margin: 0 auto;
+
   .ant-table-tbody > tr.ant-table-row > td {
     background: var(--lumber);
     color: var(--dark);

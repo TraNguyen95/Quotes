@@ -57,7 +57,8 @@ export default function NavbarAdmin() {
 const Navbar = {
   Wrapper: styled.nav`
     padding: 0.5rem 3rem 0;
-    margin-bottom: 0;
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
