@@ -65,19 +65,24 @@ export const AntDesignTable = styled(Table)`
 
 export const AntDesignForm = styled(Form)`
   background-color: transparent;
-  margin: 1.5rem auto;
+  margin: 0rem auto;
   padding: 1rem;
-  border-radius: 8px;
   max-width: 1000px;
 `;
 
 export const AntDesignFormItem = styled(Form.Item)`
   label {
     color: var(--light);
+    font-size: 1.3rem;
   }
   .ant-form-item-control-input {
     color: var(--light);
   }
+
+  .ant-input{
+    font-size: 1.3rem;
+  }
+
   .ant-switch-handle::before {
     background: #ff5757;
   }
