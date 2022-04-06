@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Breakpoints } from "../../styles/Breakpoints";
-import { AUTHOR, AUTHOR_URL } from "../../utils/config";
+import { Breakpoints } from "../styles/Breakpoints";
+import { AUTHOR, AUTHOR_URL } from "../utils/config";
 
 export default function Footer({ display }) {
   return (
@@ -19,7 +19,10 @@ export default function Footer({ display }) {
 const Styled = {
   Footer: styled.div`
     margin: 1rem auto;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     ${Breakpoints.sm} {
       display: ${(props) => props.display};
     }
