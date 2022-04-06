@@ -4,7 +4,6 @@ import { Breakpoints } from "../styles/Breakpoints";
 export const Heading = styled.h3`
   font-size: 4em;
   font-weight: 600;
-  line-height: 1.3;
   font-family: "Khand", sans-serif;
   text-align: center;
   text-transform: uppercase;
