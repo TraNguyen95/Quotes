@@ -1,6 +1,6 @@
 import axios from "axios";
 import Swal from "sweetalert2";
-import { NEMO_API } from "../utils/config";
+import { API } from "../utils/config";
 import { SweetAlertSuccessful } from "../models/SweetAlertModels";
 import { SweetAlertFailure } from "../models/SweetAlertModels";
 import { history } from "../App";
@@ -15,8 +15,8 @@ export const getQuotesAction = () => {
         type: "LOADING_TRUE",
       });
 
-      let result = await axios.get(NEMO_API);
-
+      let result = await axios.get(API);
+      
       dispatch({
         type: "GET_QUOTES",
         quotesList: result.data.quotes.reverse(),
@@ -36,7 +36,7 @@ export const getQuotesAction = () => {
 
 export const createQuotesAction = (formData) => async (dispatch) => {
   try {
-    await axios.post(process.env.REACT_APP_API, formData);
+    await axios.post(API, formData);
 
     await Swal.fire({
       ...alertSuccess,
@@ -56,7 +56,7 @@ export const createQuotesAction = (formData) => async (dispatch) => {
 
 export const updateQuotesAction = (formData, id) => async (dispatch) => {
   try {
-    await axios.put(`${process.env.REACT_APP_API}/${id}`, formData);
+    await axios.put(`${API}/${id}`, formData);
 
     await Swal.fire({
       ...alertSuccess,
@@ -77,7 +77,7 @@ export const updateQuotesAction = (formData, id) => async (dispatch) => {
 
 export const deleteQuotesAction = (id) => async (dispatch) => {
   try {
-    await axios.delete(`${process.env.REACT_APP_API}/${id}`);
+    await axios.delete(`${API}/${id}`);
     
     Swal.fire({
       ...alertSuccess,
