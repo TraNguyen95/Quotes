@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Breakpoints } from "./Breakpoints";
 
 export const StyledButton = styled.button`
   background: var(--light);
@@ -31,5 +32,13 @@ export const StyledButton = styled.button`
   :hover::after {
     transition: transform 0.5s ease-in-out;
     transform: translate3d(200%, 0, 0) rotate(35deg);
+  }
+
+  ${Breakpoints.lg}{
+    font-size: 1.5rem;
+  }
+
+  ${Breakpoints.sm}{
+    font-size: 1.3rem;
   }
 `;
