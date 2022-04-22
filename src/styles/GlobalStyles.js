@@ -29,7 +29,14 @@ export const GlobalStyles = createGlobalStyle`
         background-image: var(--bg-primary);
         font-size: 16px;
         height: inherit;
-    
+        
+    }
+
+    #root{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     h1, h3, p {
@@ -48,6 +55,10 @@ export const GlobalStyles = createGlobalStyle`
         width: 8px;
     }
 
+    .swal2-timer-progress-bar {
+        background: var(--red);
+    }
+
     @keyframes fade-in {
         0% {
             opacity: 0;
@@ -56,6 +67,30 @@ export const GlobalStyles = createGlobalStyle`
             opacity: 1;
          }
     }
+
+    @keyframes fade-in-left {
+        0% {
+            opacity: 0;
+            transform: translate3d(-100%, 0px, 0px);
+        }
+        5% {
+            opacity: 0;
+        }
+        7% {
+            opacity: 0.7;
+        }
+        8% {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    @keyframes grow {
+        0% {
+            transform: scaleX(0);
+        }     
+    }
+
 
     @keyframes spin {
         from {
@@ -80,61 +115,6 @@ export const GlobalStyles = createGlobalStyle`
         100% {
         stroke-dashoffset: -125px;
         }
-    }
-
-    
-    @keyframes zoom {
-        0% {
-            opacity: 0;
-            transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0px, 0px);
-            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-        }
-      
-        60% {
-            opacity: 1;
-            transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0px, 0px);
-            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-        }
-    }
-
-    @keyframes bounce {
-        0%, 60%, 75%, 90%, 100% {
-            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-        }
-  
-        0% {
-            opacity: 0;
-            transform: translate3d(0px, 3000px, 0px);
-            }
-
-        60% {
-            opacity: 1;
-            transform: translate3d(0px, -25px, 0px);
-            }
-
-        75% {
-            transform: translate3d(0px, 10px, 0px);
-            }
-
-        90% {
-            transform: translate3d(0px, -5px, 0px);
-        }
-
-        100% {
-            transform: none;
-        }
-  }
-
-    .fade-in {
-        animation: fade-in 1s ease-in-out 0s both;
-    }
-
-    .zoom {
-        animation: zoom 1s ease-in-out 0s both;
-    }
-
-    .bounce {
-    animation: bounce 1s ease-in-out 0.5s both;
     }
 
 `;

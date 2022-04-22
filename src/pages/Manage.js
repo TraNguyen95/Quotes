@@ -18,11 +18,10 @@ export default function Manage() {
   const isLoading = useSelector((state) => state.QuotesReducer.isLoading);
   const dispatch = useDispatch();
 
-  localStorage.setItem("ADMIN", "nemo-quotes")
   const ADMIN = localStorage.getItem("ADMIN");
 
   useEffect(() => {
-    window.scroll(0,0)
+    window.scroll(0, 0);
     dispatch(getQuotesAction());
   }, [dispatch]);
 
@@ -45,9 +44,11 @@ export default function Manage() {
       confirmButtonText: "Yes, delete it!",
       confirmButtonColor: "var(--red)",
       showCancelButton: true,
+      timerProgressBar: true,
+      timer: 3000,
     });
     if (result.isConfirmed) {
-      dispatch(deleteQuotesAction(id))
+      dispatch(deleteQuotesAction(id));
     }
   };
 
@@ -111,6 +112,7 @@ export default function Manage() {
             onChange={onChange}
             rowKey={"_id"}
             scroll={{ x: 1300 }}
+            pagination={{ pageSize: 25 }}
           />
         </S.Manage>
       )}
@@ -120,7 +122,6 @@ export default function Manage() {
 
 const S = {
   Manage: styled.div`
-    min-height: 100vh;
     margin: 1rem 3rem 0;
     animation: fade-in 1s ease-in-out;
 

@@ -6,9 +6,9 @@ export const StyledButton = styled.button`
   border: none;
   color: var(--red);
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 1rem;
   font-family: "Khand", sans-serif;
-  text-transform: ${(props) => (props.none ? "none" : "uppercase")};
+  text-transform: ${(props) => (props.none ? "none" : "capitalize")};
   font-weight: 700;
   font-size: 1.8rem;
   cursor: pointer;

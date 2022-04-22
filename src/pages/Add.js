@@ -21,7 +21,7 @@ export default function Add() {
 
   const formik = useFormik({
     initialValues: {
-      author: "ST",
+      author: "Sưu Tầm",
       title: "",
       quote: "",
     },
@@ -98,7 +98,6 @@ export default function Add() {
 
 const S = {
   Add: styled.div`
-    min-height: 100vh;
     margin: 1rem 3rem 0;
     animation: fade-in 1s ease-in-out;
 

@@ -56,16 +56,14 @@ export default function NavbarAdmin() {
 
 const Navbar = {
   Wrapper: styled.nav`
-    padding: 0.5rem 3rem 0;
+    padding: 0.5rem 2rem 0;
     max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    ${Breakpoints.lg} {
-      padding: 0.5rem 2rem 0;
-    }
   `,
   Logo: styled.h1`
     padding: 0.5rem 1rem;
@@ -143,7 +141,7 @@ const MobileNavbar = {
     font-size: 2rem;
 
     & svg {
-      color: var(--light-red);
+      color: #ce9ad9;
     }
   `,
 };

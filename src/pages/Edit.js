@@ -65,11 +65,10 @@ export default function Edit() {
         obj.title = values.title;
         obj._id = values._id;
 
-        console.log("Success");
         return dispatch(updateQuotesAction(obj, obj._id));
       }
-      console.log("Success");
-      return dispatch(updateQuotesAction(values, values._id));
+
+      return dispatch(updateQuotesAction(values, values._id, navigate));
     },
   });
 
@@ -113,7 +112,7 @@ export default function Edit() {
         </AntDesignFormItem>
         <AntDesignFormItem>
           <S.Center>
-            <StyledButton type="submit">UPDATE</StyledButton>
+            <StyledButton type="submit">update</StyledButton>
           </S.Center>
         </AntDesignFormItem>
       </AntDesignForm>
@@ -123,7 +122,6 @@ export default function Edit() {
 
 const S = {
   Edit: styled.div`
-    min-height: 100vh;
     margin: 1rem 3rem 0;
     animation: fade-in 1s ease-in-out;
 

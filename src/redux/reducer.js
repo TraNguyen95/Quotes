@@ -10,18 +10,17 @@ const initialState = {
   quote: new QuoteModel(),
 };
 
+
 export const QuotesReducer = (state = initialState, action) => {
   switch (action.type) {
     case "GET_QUOTES": {
       state.quotesList = action.quotesList;
-      state.quote =
-        state.quotesList[Math.floor(Math.random() * state.quotesList.length)];
       return { ...state };
     }
 
     case "SET_QUOTE": {
-      state.quote =
-        state.quotesList[Math.floor(Math.random() * state.quotesList.length)];
+      const id = Math.floor(Math.random() * state.quotesList.length);
+      state.quote = state.quotesList[id];
       return { ...state };
     }
 

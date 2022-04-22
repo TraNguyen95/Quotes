@@ -28,7 +28,7 @@ const Styled = {
 
   Circle: styled.circle`
     fill: none;
-    stroke: var(--red);
+    stroke: #ce9ad9;
     stroke-width: 2;
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;

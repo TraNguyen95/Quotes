@@ -52,6 +52,7 @@ const Navbar = {
     align-items: center;
     justify-content: space-between;
     max-width: 1440px;
+    width: 90%;
     margin: 0 auto;
 
     ${Breakpoints.lg} {
