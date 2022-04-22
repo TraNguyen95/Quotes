@@ -11,7 +11,7 @@
 - Styled Components
 - Ant Design
 
-[![demo](/public/preview.jpg)](https://quotes.anhtuan.info)
+[![demo](/public/preview-home.jpg)](https://quotes.anhtuan.info)
 
 [![demo](/public/preview-dashboard.jpg)](https://quotes.anhtuan.info/admin)
 
