@@ -80,7 +80,7 @@ export const GlobalStyles = createGlobalStyle`
             opacity: 0.7;
         }
         8% {
-            opacity: 1;
+            opacity: 0.8;
             transform: none;
         }
     }
