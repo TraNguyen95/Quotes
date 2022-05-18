@@ -2,7 +2,7 @@
 
 <h3 align="center">Quotes are randomly generated every 15 seconds</h3>
 <h3 align="center">API from 
-<a href="https://github.com/tuanhngf/nemo-api-v1" target="_blank">nemo-api-v1</a>.</h3>
+<a href="https://github.com/tuanhngf/my-api-v1" target="_blank">my-api-v1</a>.</h3>
 
 ## Technologies
 - ReactJS
