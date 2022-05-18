@@ -1,26 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FaHome, FaPager, FaPlusSquare } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import useViewport from "../hooks/useViewport";
 import { Breakpoints } from "../styles/Breakpoints";
 
 export default function NavbarAdmin() {
-  const [windowDimension, setWindowDimension] = useState(null);
-
-  useEffect(() => {
-    setWindowDimension(window.innerWidth);
-  }, []);
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowDimension(window.innerWidth);
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const isMobile = windowDimension <= 600;
+  const { isMobile } = useViewport();
 
   return (
     <>
@@ -63,7 +49,6 @@ const Navbar = {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
   `,
   Logo: styled.h1`
     padding: 0.5rem 1rem;
