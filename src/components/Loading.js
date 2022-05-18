@@ -1,8 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import useViewport from "../hooks/useViewport";
 
+export default function Loading({ isAdmin = true }) {
+  const { isMobile } = useViewport();
 
-export default function Loading() {
+  const rootEl = document.getElementById("root");
+
+  if (isAdmin) {
+    if (isMobile) {
+      rootEl.style.placeContent = "center";
+    }
+
+    if (!isMobile) {
+      rootEl.style.placeContent = "";
+    }
+  }
+
   return (
     <Styled.Loading>
       <Styled.SVG viewBox="25 25 50 50">
