@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { NEMO } from "../utils/config";
@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <>
       {isLoading ? (
-        <Loading />
+        <Loading isAdmin={isAdmin} />
       ) : (
         <>
           <S.Box>

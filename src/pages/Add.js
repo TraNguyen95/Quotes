@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { NEMO } from "../utils/config";
 import { QuoteModel } from "../models/QuoteModel";
@@ -16,6 +16,8 @@ import { StyledButton } from "../styles/StyledButton";
 export default function Add() {
   document.title = `Add Quote - ${NEMO}`;
 
+  const isAdmin = useSelector((state) => state.QuotesReducer.isAdmin);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -26,7 +28,7 @@ export default function Add() {
       quote: "",
     },
     onSubmit: (values) => {
-      if (localStorage.getItem("ADMIN") !== process.env.REACT_APP_ADMIN) {
+      if (!isAdmin) {
         Swal.fire({
           position: "center",
           icon: "warning",

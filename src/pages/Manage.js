@@ -16,9 +16,10 @@ export default function Manage() {
 
   const quotes = useSelector((state) => state.QuotesReducer.quotesList);
   const isLoading = useSelector((state) => state.QuotesReducer.isLoading);
+  const isAdmin = useSelector((state) => state.QuotesReducer.isAdmin);
+
   const dispatch = useDispatch();
 
-  const ADMIN = localStorage.getItem("ADMIN");
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -26,7 +27,7 @@ export default function Manage() {
   }, [dispatch]);
 
   const deleteQuote = async (id) => {
-    if (ADMIN !== process.env.REACT_APP_ADMIN) {
+    if (!isAdmin) {
       return Swal.fire({
         position: "center",
         icon: "warning",

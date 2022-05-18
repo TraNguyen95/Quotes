@@ -8,8 +8,8 @@ const initialState = {
   quotesList: [new QuoteModel()],
   isLoading: true,
   quote: new QuoteModel(),
+  isAdmin: false,
 };
-
 
 export const QuotesReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -31,6 +31,11 @@ export const QuotesReducer = (state = initialState, action) => {
 
     case "LOADING_FALSE": {
       state.isLoading = false;
+      return { ...state };
+    }
+
+    case "SET_ADMIN": {
+      state.isAdmin = true;
       return { ...state };
     }
 
