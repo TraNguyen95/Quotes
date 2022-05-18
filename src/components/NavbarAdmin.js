@@ -111,7 +111,7 @@ const MobileNavbar = {
     width: 100vw;
     bottom: 0;
     z-index: 999;
-    background: var(--light);
+    background: var(--light-red);
   `,
   List: styled.div`
     display: flex;
@@ -126,7 +126,7 @@ const MobileNavbar = {
     font-size: 2rem;
 
     & svg {
-      color: #ce9ad9;
+      color: var(--light);
     }
   `,
 };
