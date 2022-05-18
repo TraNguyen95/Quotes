@@ -74,12 +74,13 @@ export default function Home() {
 const S = {
   Box: styled.div`
     width: 768px;
-    padding: 1rem;
+    padding: 1rem 2rem;
     margin: 1rem auto;
     border-radius: 1rem;
     box-shadow: var(--shadow-light);
 
     @media only screen and (max-width: 800px) {
+      padding: 1rem 1.5rem;
       margin: 1.25rem;
       width: calc(100vw - 2rem);
     }
@@ -100,7 +101,7 @@ const S = {
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
-    animation: fade-in-left 15s ease-in-out infinite;
+    animation: zoom-in 15s ease-in-out infinite;
   `,
 
   Center: styled.div`
