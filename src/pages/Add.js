@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { NEMO } from "../utils/config";
+import { WEBSITE_NAME } from "../utils/config";
 import { QuoteModel } from "../models/QuoteModel";
 import styled from "styled-components";
 import { Breakpoints } from "../styles/Breakpoints";
@@ -14,7 +14,7 @@ import Swal from "sweetalert2";
 import { StyledButton } from "../styles/StyledButton";
 
 export default function Add() {
-  document.title = `Add Quote - ${NEMO}`;
+  document.title = `Add Quote - ${WEBSITE_NAME}`;
 
   const isAdmin = useSelector((state) => state.QuotesReducer.isAdmin);
 

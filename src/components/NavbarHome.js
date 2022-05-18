@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import useViewport from "../hooks/useViewport";
 import { Breakpoints } from "../styles/Breakpoints";
+import { WEBSITE_NAME } from "../utils/config";
 
 export default function NavbarHome() {
   const { isMobile } = useViewport();
@@ -13,7 +14,7 @@ export default function NavbarHome() {
       {isMobile ? (
         <MobileNavbar>
           <Navbar.Link to="/">
-            <Navbar.Logo>NEMO QUOTES</Navbar.Logo>
+            <Navbar.Logo>{WEBSITE_NAME}</Navbar.Logo>
           </Navbar.Link>
           <Navbar.Link to="/admin">
             <FaPager />
@@ -22,7 +23,7 @@ export default function NavbarHome() {
       ) : (
         <Navbar.Wrapper>
           <Navbar.Link to="/">
-            <Navbar.Logo>NEMO QUOTES</Navbar.Logo>
+            <Navbar.Logo>{WEBSITE_NAME}</Navbar.Logo>
           </Navbar.Link>
           <Navbar.Link to="/admin">Dashboard</Navbar.Link>
         </Navbar.Wrapper>

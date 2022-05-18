@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { NEMO } from "../utils/config";
+import { WEBSITE_NAME } from "../utils/config";
 import { getQuotesAction } from "../redux/action";
 import Loading from "../components/Loading";
 
 export default function Home() {
-  document.title = NEMO;
+  document.title = WEBSITE_NAME;
 
   const isLoading = useSelector((state) => state.QuotesReducer.isLoading);
   const quote = useSelector((state) => state.QuotesReducer.quote);

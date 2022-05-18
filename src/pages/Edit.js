@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { API, NEMO } from "../utils/config";
+import { API, WEBSITE_NAME } from "../utils/config";
 import { QuoteModel } from "../models/QuoteModel";
 import axios from "axios";
 import styled from "styled-components";
@@ -15,7 +15,7 @@ import Swal from "sweetalert2";
 import { StyledButton } from "../styles/StyledButton";
 
 export default function Edit() {
-  document.title = `Edit Quote - ${NEMO}`;
+  document.title = `Edit Quote - ${WEBSITE_NAME}`;
 
   const isAdmin = useSelector((state) => state.QuotesReducer.isAdmin);
 

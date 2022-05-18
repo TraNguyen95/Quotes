@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import useViewport from "../hooks/useViewport";
 import { Breakpoints } from "../styles/Breakpoints";
+import { WEBSITE_NAME } from "../utils/config";
 
 export default function NavbarAdmin() {
   const { isMobile } = useViewport();
@@ -27,7 +28,7 @@ export default function NavbarAdmin() {
       ) : (
         <Navbar.Wrapper>
           <Link to="/">
-            <Navbar.Logo>NEMO QUOTES</Navbar.Logo>
+            <Navbar.Logo>{WEBSITE_NAME}</Navbar.Logo>
           </Link>
           <Navbar.List>
             <Navbar.Link to="/">Home</Navbar.Link>

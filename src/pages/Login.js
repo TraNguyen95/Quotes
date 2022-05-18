@@ -4,7 +4,10 @@ import { Form, Input } from "antd";
 import useViewport from "../hooks/useViewport";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { WEBSITE_NAME } from "../utils/config";
 export default function Login() {
+  document.title = `Login - ${WEBSITE_NAME}`;
+
   const [input, setInput] = useState("");
   const { isMobile } = useViewport();
   const dispatch = useDispatch();

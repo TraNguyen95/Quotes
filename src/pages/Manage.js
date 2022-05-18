@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NEMO } from "../utils/config";
+import { WEBSITE_NAME } from "../utils/config";
 import { deleteQuotesAction, getQuotesAction } from "../redux/action";
 import styled from "styled-components";
 import Swal from "sweetalert2";
@@ -12,14 +12,15 @@ import { Breakpoints } from "../styles/Breakpoints";
 import { Link } from "react-router-dom";
 
 export default function Manage() {
-  document.title = `Manage Quotes - ${NEMO}`;
+  document.title = `Manage Quotes - ${WEBSITE_NAME}`;
+
+  document.getElementById("root").style.placeContent = "";
 
   const quotes = useSelector((state) => state.QuotesReducer.quotesList);
   const isLoading = useSelector((state) => state.QuotesReducer.isLoading);
   const isAdmin = useSelector((state) => state.QuotesReducer.isAdmin);
 
   const dispatch = useDispatch();
-
 
   useEffect(() => {
     window.scroll(0, 0);
