@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import useViewport from "../hooks/useViewport";
 
-export default function Loading({ isAdmin = true }) {
+export default function Loading({isAdmin = true}) {
   const { isMobile } = useViewport();
 
   const rootEl = document.getElementById("root");
 
-  if (isAdmin) {
+  if (isAdmin === true) {
     if (isMobile) {
       rootEl.style.placeContent = "center";
     }
