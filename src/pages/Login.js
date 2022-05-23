@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Form, Input } from "antd";
 import useViewport from "../hooks/useViewport";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { WEBSITE_NAME } from "../utils/config";
 export default function Login() {
@@ -11,8 +11,7 @@ export default function Login() {
   const [input, setInput] = useState("");
   const { isMobile } = useViewport();
   const dispatch = useDispatch();
-  const navigate = useNavigate()
-  const isAdmin = useSelector((state) => state.QuotesReducer.isAdmin);
+  const navigate = useNavigate();
 
   const rootEl = document.getElementById("root");
 
@@ -29,7 +28,7 @@ export default function Login() {
     if (input === process.env.REACT_APP_ADMIN) {
       dispatch({ type: "SET_ADMIN" });
       alert("Welcome Back");
-      return navigate('/admin')
+      return navigate("/admin");
     }
 
     return alert("Invalid Code");
@@ -39,7 +38,7 @@ export default function Login() {
     <S.Box>
       <S.Form onSubmitCapture={handleSubmit}>
         <S.Input
-          placeholder={isAdmin ? "Welcome Back" : "Enter admin code"}
+          placeholder="Enter admin code"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
