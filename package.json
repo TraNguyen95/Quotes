@@ -2,7 +2,7 @@
   "name": "nemo-quotes",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://quotes.anhtuan.info",
   "dependencies": {
     "antd": "^4.19.5",
     "axios": "^0.26.1",
